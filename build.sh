@@ -1,10 +1,10 @@
 #!/bin/bash
 cd "$(dirname -- "$(readlink -fn -- "${0}")")"
 
-COMMIT_AMDVLK=f0d045e
+COMMIT_AMDVLK=e9d0b40
 COMMIT_LLVM=eb5eb1c
-COMMIT_PAL=488c77b
-COMMIT_XGL=a20e789
+COMMIT_PAL=28a98ba
+COMMIT_XGL=bd829ae
 
 mkdir -p "$HOME"/AMDVLK/build
 
@@ -21,6 +21,11 @@ cd AMDVLK && git reset --hard && git clean -fd && cd ..
 cd llvm   && git reset --hard && git clean -fd && cd ..
 cd pal    && git reset --hard && git clean -fd && cd ..
 cd xgl    && git reset --hard && git clean -fd && cd ..
+
+cd AMDVLK && git checkout -q dev && cd ..
+cd llvm   && git checkout -q amd-vulkan-master && cd ..
+cd pal    && git checkout -q dev && cd ..
+cd xgl    && git checkout -q dev && cd ..
 
 cd AMDVLK && git remote update && cd ..
 cd llvm   && git remote update && cd ..
