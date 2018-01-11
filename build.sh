@@ -37,6 +37,7 @@ cd llvm   && git checkout -q $COMMIT_LLVM   && cd ..
 cd pal    && git checkout -q $COMMIT_PAL    && cd ..
 cd xgl    && git checkout -q $COMMIT_XGL    && cd ..
 
+patch -Np1 < llvm_cmake.patch
 patch -Np1 < xgl_cmake.patch
 
 cmake -G Ninja -DCMAKE_VERBOSE_MAKEFILE=ON -H"$HOME"/AMDVLK/xgl -B"$HOME"/AMDVLK/build/Release64 -DCMAKE_BUILD_TYPE=Release -DCMAKE_MODULE_PATH="$HOME"/AMDVLK/pal/cmake/Modules -DXGL_PAL_PATH:PATH="$HOME"/AMDVLK/pal -DCMAKE_C_FLAGS="-DLINUX -D__x86_64__ -D__AMD64__" -DCMAKE_CXX_FLAGS="-DLINUX -D__x86_64__ -D__AMD64__" -DXGL_LLVM_SRC_PATH="$HOME"/AMDVLK/llvm
