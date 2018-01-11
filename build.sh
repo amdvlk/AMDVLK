@@ -8,7 +8,8 @@ COMMIT_XGL=bd829ae
 
 mkdir -p "$HOME"/AMDVLK/build
 
-cp xgl_cmake.patch "$HOME"/AMDVLK
+cp llvm_cmake.patch "$HOME"/AMDVLK
+cp xgl_cmake.patch  "$HOME"/AMDVLK
 
 cd "$HOME"/AMDVLK
 
