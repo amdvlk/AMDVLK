@@ -1,10 +1,10 @@
 #!/bin/bash
 cd "$(dirname -- "$(readlink -fn -- "${0}")")"
 
-COMMIT_AMDVLK=e9d0b40
+COMMIT_AMDVLK=5a93ea2
 COMMIT_LLVM=eb5eb1c
-COMMIT_PAL=28a98ba
-COMMIT_XGL=bd829ae
+COMMIT_PAL=92f481f
+COMMIT_XGL=02f11b6
 
 mkdir -p "$HOME"/AMDVLK/build
 
